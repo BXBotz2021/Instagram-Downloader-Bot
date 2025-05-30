@@ -16,8 +16,8 @@ class Config:
     REDIS_DB = int(os.getenv("REDIS_DB", 0))  # Usually DB index is 0 unless you're using multiple Redis databases
 
     # Instagram (optional)
-    INSTA_USERNAME = os.getenv("INSTA_USERNAME", None)
-    INSTA_PASSWORD = os.getenv("INSTA_PASSWORD", None)
+    INSTA_USERNAME = os.getenv("INSTA_USERNAME", "greyangel8888")
+    INSTA_PASSWORD = os.getenv("INSTA_PASSWORD", "khss12345")
     
     @property
     def has_insta_creds(self):
