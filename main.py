@@ -6,8 +6,10 @@ import logging
 logging.basicConfig(format='[%(levelname)s] %(message)s', level=logging.INFO)
 
 async def main():
-    client = TelegramClient('bot', Config.API_ID, Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
-    
+    client = TelegramClient('bot', Config.API_ID, Config.API_HASH)
+    await client.start(bot_token=Config.BOT_TOKEN)  # ✅ await the start method properly
+
+    # ✅ Now client is usable
     client.add_event_handler(handle_start, events.NewMessage(pattern='/start'))
     client.add_event_handler(handle_help, events.NewMessage(pattern='/help'))
     client.add_event_handler(handle_about, events.NewMessage(pattern='/about'))
@@ -16,7 +18,7 @@ async def main():
     client.add_event_handler(handle_profile_pic, events.NewMessage(pattern=r'/(dp|profile_pic)\s*'))
     client.add_event_handler(handle_download, events.NewMessage())
     client.add_event_handler(handle_callback, events.CallbackQuery())
-    
+
     logging.info("Bot started!")
     await client.run_until_disconnected()
 
