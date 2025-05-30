@@ -13,7 +13,7 @@ class Config:
     REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
     REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
     REDIS_PASSWORD = os.getenv("REDIS_PASSWORD", "lpyhkguL4VmjkU8hyF8MHmbzmsDbE7RL")
-    REDIS_DB = int(os.getenv("REDIS_DB", "redis-16415.c228.us-central1-1.gce.redns.redis-cloud.com:16415"))
+    REDIS_DB = int(os.getenv("REDIS_DB", redis-16415.c228.us-central1-1.gce.redns.redis-cloud.com:16415))
     
     # Instagram (optional)
     INSTA_USERNAME = os.getenv("INSTA_USERNAME", None)
